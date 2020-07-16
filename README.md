@@ -1,4 +1,4 @@
-## WeatherAPI
+## Current Weather Data
 Another coding challenge, the implementation for creating a url request has matured a little with automated header generation. Although not supported in this project.
 
 To build and run the project first sign up for an account here: \
