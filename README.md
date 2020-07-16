@@ -13,6 +13,6 @@ More details are available here: \
 https://openweathermap.org/current
 
 ## Project Information
-Xcode 11.5
-Swift 5
+Xcode 11.5 \
+Swift 5 \
 Deployment Target 13.5
