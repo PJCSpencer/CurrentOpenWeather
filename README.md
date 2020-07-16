@@ -7,7 +7,7 @@ https://openweathermap.org/api
 Once a new account is registered, under the API Keys tab generate a new API key here: \
 https://home.openweathermap.org/api_keys
 
-In PJCAPISecurity.swift copy and paste the new key in to the enum PJCAPISecurityKey for 'appid' in . Marked 'copyAPIKeyHere'.
+In the file PJCAPISecurity.swift copy and paste the new key in to the enum PJCAPISecurityKey for 'appid', marked 'copyAPIKeyHere'.
 
 More details are available here: \
 https://openweathermap.org/current
