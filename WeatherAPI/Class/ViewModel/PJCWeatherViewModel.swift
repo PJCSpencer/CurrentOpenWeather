@@ -37,13 +37,14 @@ class PJCWeatherViewModel: PJCViewModel<PJCCurrentWeather>
     
     // MARK: - Property(s)
     
-    var color: UIColor
+    private var tempuratureMeasurement: Measurement<UnitTemperature>
     {
-        let measurement = Measurement(value: self.model.main.temp,
-                                      unit: UnitTemperature.kelvin)
-        
-        return UIColor.color(measurement: measurement)
+        return Measurement(value: self.model.main.temp,
+                           unit: UnitTemperature.kelvin)
     }
+    
+    var color: UIColor
+    { return UIColor.color(measurement: self.tempuratureMeasurement) }
     
     var request: URLRequest?
     {
@@ -59,12 +60,7 @@ class PJCWeatherViewModel: PJCViewModel<PJCCurrentWeather>
     }
     
     var tempurature: String
-    {
-        let measurement = Measurement(value: self.model.main.temp,
-                                      unit: UnitTemperature.kelvin).converted(to: .celsius)
-        
-        return PJCWeatherViewModel.measurementFormatter.string(from: measurement)
-    }
+    { return PJCWeatherViewModel.measurementFormatter.string(from: self.tempuratureMeasurement) }
     
     var location: String
     { return "\(self.model.name), \(self.model.sys.country)" }
