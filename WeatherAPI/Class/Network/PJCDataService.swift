@@ -21,7 +21,7 @@ protocol PJCDataTaskProvider
               responseHandler: @escaping PJCDataTaskResponseHandlerProvider) -> URLSessionTask
 }
 
-protocol PJCResponseHandlerProvider
+protocol PJCDataTaskResponseHandlerDelegate
 {
     func responseHandler(forStatus code: Int) -> PJCDataTaskResponseHandler?
 }
@@ -51,7 +51,7 @@ class PJCDataService
 {
     // MARK: - Property(s)
     
-    private(set) var session: URLSession = URLSession.shared
+    private(set) var session: URLSession
     
     
     // MARK: - Initialisation
