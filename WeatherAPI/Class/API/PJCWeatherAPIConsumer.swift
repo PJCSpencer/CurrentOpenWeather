@@ -42,7 +42,7 @@ class PJCWeatherAPIConsumer
 }
 
 // MARK: - PJCResponseHandlerProvider
-extension PJCWeatherAPIConsumer: PJCResponseHandlerProvider
+extension PJCWeatherAPIConsumer: PJCDataTaskResponseHandlerDelegate
 {
     func responseHandler(forStatus code: Int) -> PJCDataTaskResponseHandler?
     {
@@ -55,7 +55,7 @@ extension PJCWeatherAPIConsumer: PJCResponseHandlerProvider
 // MARK: - URL Response Consumer Method(s)
 extension PJCWeatherAPIConsumer
 {
-    func serialise(_ result: PJCDataTaskResult)
+    private func serialise(_ result: PJCDataTaskResult)
     {
         guard let result: PJCCurrentWeather = try? result.get().decodedJSON() else
         {
